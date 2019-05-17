@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  	before_action :authenticate_user! , only:[:new, :index]
 	def new
 		@user = User.new
 	end
@@ -16,11 +17,13 @@ class SessionsController < ApplicationController
 			flash[:error] = 'Invalid email/password combination'
 			render :new
 		end
-		end
+	end
 
-		def destroy
-			#complete this method
-			log_out
-	    	redirect_to root_url
+	def destroy
+		#complete this method
+		session.delete(:user_id)
+		@current_user = nil
+		log_out
+    	redirect_to root_url
 	end
 end

@@ -11,6 +11,7 @@ class RegistrationsController < ApplicationController
 	    	redirect_to root_url
 	    end
 	end
+	
 	def user_params
       params.require(:registrations).permit(:name, :last_name, :email, :phone, :password)
     end

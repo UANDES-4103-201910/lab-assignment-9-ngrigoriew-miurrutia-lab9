@@ -18,7 +18,7 @@ class User < ApplicationRecord
 			user.uid = auth.uid
 			user.email = auth.info.email
 			user.name = auth.info.name
-			user.password = Devise.friendly_token[0,20]
+			#user.password = Devise.friendly_token[0,20]
 		end
 	end
 
