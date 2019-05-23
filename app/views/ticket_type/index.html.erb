@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ticket Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eticket_types.each do |ticket_type| %>
+      <tr>
+        <td><%= ticket_type.email %></td> 
+        <td><%= link_to 'Show', ticket_type %></td>
+        <% if can? :manage, @ticket_type %>
+        <td><%= link_to 'Edit', edit_ticket_type_path(ticket_type) %></td>
+        <% end %>
+        <% if can? :destroy, @ticket_type %>
+        <td><%= link_to 'Destroy', ticket_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if can? :manage, @ticket_type %>
+<%= link_to 'New ticket_type', new_ticket_type_path %>
+<% end %>

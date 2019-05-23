@@ -1,0 +1,7 @@
+<h1>Editing Ticket_type</h1>
+<% if can? :manage, @ticket_type %>
+	<%= render 'form', ticket_type: @ticket_type %>
+
+	<%= link_to 'Show', @ticket_type %> |
+	<%= link_to 'Back', ticket_types_path %>
+<% end %>

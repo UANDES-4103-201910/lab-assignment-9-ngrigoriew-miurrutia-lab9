@@ -1,0 +1,5 @@
+<p id="notice"><%= notice %></p>
+<% if can? :manage, @ticket_type %>
+<%= link_to 'Edit', edit_ticket_type_path(@ticket_type) %> |
+<% end %>
+<%= link_to 'Back', ticket_types_path %>
