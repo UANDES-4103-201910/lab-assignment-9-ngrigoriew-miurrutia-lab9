@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user_tickets/index'
   get 'ticket_type/index'
   get 'ticket/index'
   get 'event/index'
