@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :events
   resources :tickets
 
-  root :to => 'sessions#new'
+
+  root :to => 'ticket#index'
 
   post '/login',   to: 'sessions#create', as: :log_in
   delete '/log_out' => 'sessions#destroy', as: :log_out

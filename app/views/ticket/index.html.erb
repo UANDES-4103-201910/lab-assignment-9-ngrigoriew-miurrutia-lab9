@@ -10,9 +10,14 @@
   </thead>
 
   <tbody>
+    <h3>Please check the tickets you want to buy</h3>
+
     <% @tickets.each do |ticket| %>
       <tr>
-        <td><%= ticket.email %></td> 
+        <td><p>Event:<%= ticket.event.name %></p></td>
+        <td><%= ticket.event.start_date %></td>
+        <td>$<%= ticket.price %></td> 
+        <td><%= check_box("Ticket", "validated")%></td>
         <td><%= link_to 'Show', ticket %></td>
         <% if can? :manage, @ticket %>
         <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
@@ -22,6 +27,8 @@
         <% end %>
       </tr>
     <% end %>
+
+    <td>
   </tbody>
 </table>
 
