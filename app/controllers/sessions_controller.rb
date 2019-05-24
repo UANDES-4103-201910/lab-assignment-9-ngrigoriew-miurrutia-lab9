@@ -4,9 +4,7 @@ class SessionsController < ApplicationController
 		if current_user
 			redirect_to current_user
 
-		end
-		
-		
+		end	
 	end
 
 	def create

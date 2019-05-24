@@ -12,8 +12,8 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.email %></td> 
-        <td><%= link_to 'Show', event %></td>
+        <td><%= event.name %></td> 
+        <td><%= link_to 'Show', event_index_url %></td>
         <% if can? :manage, @event %>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <% end %>
